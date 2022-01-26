@@ -1,0 +1,83 @@
+@import "colors";
+@import "mixins";
+.cornerRoad{
+    font-family: 'Train One', cursive;
+    font-size: 4rem;
+    text-align: center;
+    color: $white;
+}
+// NavBar
+.navigation {
+    width: 60px;
+    height: 100%;
+    position: fixed;
+  
+    z-index: 10;
+    overflow: hidden;
+    overflow-y: auto;
+    transition: 0.5s ease-in-out;
+
+    &.active,
+    &:hover {
+        width: 300px;
+    }
+
+    ul {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        color: #fff;
+
+        li {
+            position: relative;
+            width: 100%;
+            list-style: none;
+
+            &:hover {
+                @include glassmorphismCard;
+                z-index: 1;
+            }
+
+            a {
+                display: block;
+                width: 100%;
+                display: flex;
+                text-decoration: none;
+                color: #fff;
+            }
+
+            .icon {
+                position: relative;
+                display: block;
+                min-width: 60px;
+                height: 60px;
+                line-height: 60px;
+                text-align: center;
+
+                .fa {
+                    font-size: 24px;
+                }
+            }
+
+            .title {
+                position: relative;
+                display: block;
+                padding: 0 10px;
+                height: 60px;
+                line-height: 60px;
+                text-align: start;
+                white-space: nowrap;
+            }
+        }
+    }
+
+    input {
+        width: 15vw;
+        padding: .8rem .5rem;
+        border-radius: 10px;
+    }
+}
+
+
+// search Bar

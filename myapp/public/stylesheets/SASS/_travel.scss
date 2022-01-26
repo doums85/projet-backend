@@ -1,0 +1,16 @@
+@import "colors";
+@import "mixins";
+
+.glassmorphism{
+    @include glassmorphismCard
+}
+
+.wrapper{
+    width: 80vw;
+    margin:3rem auto 0 auto;
+    display: grid;
+    grid-template-columns: repeat (2,auto );
+    img{
+        width: 40vw;
+    }
+}

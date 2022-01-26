@@ -1,0 +1,119 @@
+@mixin googleFonts($font) {
+    @import url('https://fonts.googleapis.com/css2?family=#{$font}');
+}
+
+// Fonts
+@include googleFonts(Poppins);
+@include googleFonts(Train One);
+// IMPORT FILE
+@import "colors";
+@import "mixins";
+@import "navbar";
+@import "footer";
+@import "overview";
+@import "travel";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(300deg, #03A9F4, #ff0058);
+
+    .glassmorphismCard {
+        @include glassmorphismCard;
+    }
+}
+
+
+
+/* End of Footer */
+.toggle {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+    box-shadow: 0 5px 45px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+
+    &:before {
+        content: '\f0c9';
+        font-family: fontAwesome;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        line-height: 60px;
+        text-align: center;
+        font-size: 24px;
+        color: #fff;
+    }
+
+    &.active:before {
+        content: '\f00d';
+        backdrop-filter: blur(4px);
+        z-index: 10;
+        box-shadow: 0 5px 45px rgba(0, 0, 0, 0.1);
+    }
+}
+
+@media (max-width: 767px) {
+    .navigation {
+        left: -60px;
+
+        &.active {
+            left: 0px;
+            width: 100%;
+        }
+    }
+}
+
+
+
+
+
+// HomePage Styles
+.welcome {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../../images/homepage.jpeg');
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    div {
+        text-align: center;
+        position: relative;
+        top: 30%;
+    }
+
+    h1 {
+        margin-top: 0;
+        font-size: calc(1em + 4vw);
+        color: $white;
+    }
+
+    .button {
+        color: $white;
+        text-decoration: none;
+        padding: 0.8rem 2rem;
+        border-radius: 1.5rem;
+        display: inline-block;
+        transition: all 0.5s ease-in;
+        background: rgba($white, 0.25);
+        box-shadow: 0 10px 30px rgba(60, 60, 60, 0.4);
+        @include backdrop-filter(3px);
+        border: 1px solid rgba($white, 0.1);
+
+        &:hover {
+            background: rgba($white, 0.2);
+            transform: scale(1.1, 1.1);
+        }
+    }
+}
